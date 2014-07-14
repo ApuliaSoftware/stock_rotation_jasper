@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Andre@ (<a.gallina@cgsoftware.it>)
+#    Copyright (C) 2014 Apulia Software S.r.l. (<info@apuliasoftware.it>)
 #    All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
     'version': '0.1',
     'category': 'accoont',
     'description': """Print of VAT Registry with Jasper Reports""",
-    'author': 'Andre@ <a.gallina@cgsoftware.it>',
+    'author': 'Apulia Software S.r.l.',
     'website': 'www.apuliasoftware.it',
     'license': 'AGPL-3',
     "depends": ['jasper_reports',
