@@ -57,7 +57,7 @@ FROM
 ORDER BY
      account_journal."name" ASC,
      temporary_vatregistry."period_id" ASC,
-     temporary_vatregistry."invoice_id" ASC,
+
 temporary_vatregistry."date" ASC,
 temporary_vatregistry."invoice_number" ASC]]>
 	</queryString>
