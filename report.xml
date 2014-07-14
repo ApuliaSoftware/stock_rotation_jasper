@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+<data >
+
+        <!-- REPORT  VAT REGISTRY-->
+        <record id="report_jr_vat_registry" model="ir.actions.report.xml">
+                <field name="name">Vat Registry</field>
+                <field name="type">ir.actions.report.xml</field>
+                <field name="model">account.move</field>
+                <field name="report_name">vat_jr_registry</field>
+                <field name="report_rml">l10n_it_jasper_vat_registry/report/vat_registry.jrxml</field>
+                <field name="report_type">pdf</field>
+                <field name="jasper_report">True</field>
+                <field name="jasper_output">pdf</field>
+        </record>
+
+
+
+</data>
+</openerp>

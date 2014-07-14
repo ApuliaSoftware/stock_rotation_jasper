@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_vat_registry" model="ir.ui.view">
+            <field name="name">VAT Registry</field>
+            <field name="model">wizard.print.vatregistry</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tax Journal" version="7.0">
+                    <group>
+<!--
+                        <field name="type"/>
+-->
+                        <field name="fiscal_page_base"/>
+                        <field name="fiscal_year_page"/>
+                        <separator string="Periods" colspan="4"/>
+                        <field name="period_ids" colspan="4" nolabel="1" height="250"/>
+                        <separator string="Journals" colspan="4"/>
+                        <field name="journal_ids" colspan="4" nolabel="1" height="250" domain="[('type', 'in', ('sale','purchase','sale_refund','purchase_refund'))]"/>
+                        <newline/>
+                    </group>
+                    <footer>
+                        <button string="Print" name="start_printing" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_vat_registry" model="ir.actions.act_window">
+            <field name="name">VAT Registry</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.print.vatregistry</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            name="Jasper VAT Registries"
+            parent="account.menu_finance_reporting"
+            action="action_vat_registry"
+            id="menu_vat_registry"
+            icon="STOCK_PRINT"/>
+
+    </data>
+</openerp>
