@@ -58,8 +58,7 @@ ORDER BY
      account_journal."name" ASC,
      temporary_vatregistry."period_id" ASC,
      temporary_vatregistry."invoice_id" ASC,
-temporary_vatregistry."date" ASC
-]]>
+temporary_vatregistry."date" ASC]]>
 	</queryString>
 	<field name="temporary_vatregistry_amount_untaxed" class="java.lang.Double"/>
 	<field name="temporary_vatregistry_name" class="java.lang.String"/>
@@ -100,7 +99,7 @@ temporary_vatregistry."date" ASC
 	<variable name="New_Page" class="java.lang.Float">
 		<variableExpression><![CDATA[$V{PAGE_NUMBER} + $P{last_page}]]></variableExpression>
 	</variable>
-	<group name="Giornale" isStartNewPage="true">
+	<group name="Giornale" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{temporary_vatregistry_journal_id}]]></groupExpression>
 		<groupHeader>
 			<band height="15">
@@ -222,7 +221,7 @@ temporary_vatregistry."date" ASC
 				<textField>
 					<reportElement x="228" y="10" width="159" height="10"/>
 					<textElement>
-						<font size="8"/>
+						<font size="7"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["P.I. " + ($F{res_partner_a_vat} == null ? "": $F{res_partner_a_vat})+
 " C.F. " +
@@ -327,8 +326,7 @@ $F{temporary_vatregistry_invoice_type}.contains( "in" ) ? "Acquisto" : ""]]></te
 				<textElement textAlignment="Right">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$F{temporary_vatregistry_amount_untaxed} < 0 ? $F{temporary_vatregistry_amount_untaxed} * -1 : $F{temporary_vatregistry_amount_untaxed}
-]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{temporary_vatregistry_amount_untaxed} < 0 ? $F{temporary_vatregistry_amount_untaxed} * -1 : $F{temporary_vatregistry_amount_untaxed}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="497" y="0" width="57" height="10"/>
