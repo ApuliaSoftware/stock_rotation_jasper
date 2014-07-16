@@ -131,6 +131,8 @@ class temporary_vatregistry(orm.Model):
         line_ids = []
         for invoice in invoice_obj.browse(cr, uid, invoice_ids, context):
             tax_sign = 1
+            if invoice.state in ('proforma', 'proforma2'):
+                continue
             if invoice.type in ('in_invoice', 'out_refund'):
                 tax_sign = -1
             for tax_line in invoice.tax_line:
