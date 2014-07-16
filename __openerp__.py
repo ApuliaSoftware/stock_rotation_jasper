@@ -31,7 +31,9 @@
                 'account'
                 ],
     "init_xml": ['wizard/print_vat_registry.xml',
-                 'report.xml',],
+                 'report.xml',
+                 'security/ir.model.access.csv',
+                 ],
     "update_xml": [],
     "demo_xml": [],
     "active": False,
