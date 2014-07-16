@@ -122,7 +122,8 @@ class temporary_vatregistry(orm.Model):
         invoice_ids = invoice_obj.search(cr, uid, [
             ('journal_id', 'in', [j.id for j in paramters.journal_ids]),
             ('period_id', 'in', [p.id for p in paramters.period_ids]),
-            ('state', 'not in', ('posted', 'draft', 'cancel')),
+            ('state', 'not in', ('posted', 'draft',
+                                 'cancel', 'proforma', 'proforma2')),
             ], order='registration_date')
         if not invoice_ids:
             #~ TODO
