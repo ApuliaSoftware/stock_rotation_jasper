@@ -258,7 +258,7 @@ msgstr "Tipo Fattura"
 #. module: l10n_it_jasper_vat_registry
 #: model:ir.ui.menu,name:l10n_it_jasper_vat_registry.menu_vat_registry
 msgid "Jasper VAT Registries"
-msgstr "Registro IVA/Liquidazioni"
+msgstr "Stampa Registri IVA"
 
 #. module: l10n_it_jasper_vat_registry
 #: field:temporary.vatregistry,journal_id:0

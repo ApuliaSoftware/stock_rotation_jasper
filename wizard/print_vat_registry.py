@@ -133,14 +133,16 @@ class temporary_vatregistry(orm.Model):
             tax_sign = 1
             if invoice.state in ('proforma', 'proforma2'):
                 continue
+            invoice_number = invoice.number
             if invoice.type in ('in_invoice', 'out_refund'):
                 tax_sign = -1
+                invoice_number = invoice.supplier_invoice_number
             for tax_line in invoice.tax_line:
                 vals = {
                     'company_id': invoice.company_id.id,
                     'name': invoice.move_id.name,
                     'date': invoice.registration_date,
-                    'invoice_number': invoice.number,
+                    'invoice_number': invoice_number,
                     'invoice_id': invoice.id,
                     'invoice_date': invoice.date_invoice,
                     'partner_id': invoice.partner_id.id,

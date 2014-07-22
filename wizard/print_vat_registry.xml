@@ -40,7 +40,7 @@
 
         <menuitem
             name="Jasper VAT Registries"
-            parent="account.menu_finance_reporting"
+            parent="account.menu_account_end_year_treatments"
             action="action_vat_registry"
             id="menu_vat_registry"
             icon="STOCK_PRINT"/>
