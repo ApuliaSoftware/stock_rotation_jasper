@@ -59,7 +59,7 @@ ORDER BY
      temporary_vatregistry."period_id" ASC,
 
 temporary_vatregistry."date" ASC,
-temporary_vatregistry."invoice_number" ASC]]>
+temporary_vatregistry."name" ASC]]>
 	</queryString>
 	<field name="temporary_vatregistry_amount_untaxed" class="java.lang.Double"/>
 	<field name="temporary_vatregistry_name" class="java.lang.String"/>
