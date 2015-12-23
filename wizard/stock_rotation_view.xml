@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_stock_rotation" model="ir.ui.view">
+            <field name="name">Stock products rotation</field>
+            <field name="model">wizard.print.stockrotation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Stock rotation products" version="7.0">
+                    <group>
+                        <field name="start_date" colspan="2"/>
+                        <field name="end_date" colspan="2"/>
+                        <separator string="Catergories" colspan="4"/>
+                        <field name="category_ids" colspan="4" nolabel="1" height="250"/>
+                        <separator string="Products" colspan="4"/>
+                        <field name="product_ids" colspan="4" nolabel="1" height="250"/>
+                        <newline/>
+                    </group>
+                    <footer>
+                        <button string="Print" name="start_printing" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stock_rotation" model="ir.actions.act_window">
+            <field name="name">Stock products rotation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.print.stockrotation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            name="Stock products rotation"
+            parent="stock.menu_stock_inventory_control"
+            action="action_stock_rotation"
+            id="menu_stock_rotation"
+            icon="STOCK_PRINT"/>
+
+    </data>
+</openerp>

@@ -1,4 +1,4 @@
-l10n_it_jasper_vat_registry
+stock_rotation_jasper
 ===========================
 
-Print of VAT Registry with Jasper Reports
+Print products rotation with Jasper Reports

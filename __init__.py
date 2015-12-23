@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Apulia Software S.r.l. (<info@apuliasoftware.it>)
+#    Copyright (C) 2015 Apulia Software S.r.l. (<info@apuliasoftware.it>)
 #    All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-import wizard
+from . import wizard

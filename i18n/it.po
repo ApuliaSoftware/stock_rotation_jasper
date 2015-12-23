@@ -1,6 +1,6 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-#	* l10n_it_jasper_vat_registry
+#	* stock_rotation_jasper
 #
 msgid ""
 msgstr ""
@@ -15,410 +15,405 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "\" \" + $V{PAGE_NUMBER}"
 msgstr "\" \" + $V{PAGE_NUMBER}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "\"./\""
 msgstr "\"./\""
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "\"P.I. \" + ($F{res_partner_a_vat} == null ? \"\": $F{res_partner_a_vat})+ \" C.F. \" + ($F{res_partner_a_fiscalcode} == null ? \"\" :$F{res_partner_a_fiscalcode})"
 msgstr "\"P.I. \" + ($F{res_partner_a_vat} == null ? \"\": $F{res_partner_a_vat})+ \" C.F. \" + ($F{res_partner_a_fiscalcode} == null ? \"\" :$F{res_partner_a_fiscalcode})"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "\"Pagina \"+$V{PAGE_NUMBER}+\" di\""
 msgstr "\"Pagina \"+$V{PAGE_NUMBER}+\" di\""
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "\"Partita IVA: \" + ($F{res_partner_vat} == null ? \"\": $F{res_partner_vat})+ \" Codice Fiscale: \" + ($F{res_partner_fiscalcode} == null ? \"\" :$F{res_partner_fiscalcode})"
 msgstr "\"Partita IVA: \" + ($F{res_partner_vat} == null ? \"\": $F{res_partner_vat})+ \" Codice Fiscale: \" + ($F{res_partner_fiscalcode} == null ? \"\" :$F{res_partner_fiscalcode})"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$F{account_journal_name}"
 msgstr "$F{account_journal_name}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$F{account_period_name}"
 msgstr "$F{account_period_name}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$F{account_tax_code_name}"
 msgstr "$F{account_tax_code_name}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$F{res_company_name}"
 msgstr "$F{res_company_name}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$F{res_partner_a_name}"
 msgstr "$F{res_partner_a_name}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_amount_tax} < 0 ? $F{temporary_vatregistry_amount_tax} * -1 : $F{temporary_vatregistry_amount_tax}"
-msgstr "$F{temporary_vatregistry_amount_tax} < 0 ? $F{temporary_vatregistry_amount_tax} * -1 : $F{temporary_vatregistry_amount_tax}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_amount_tax} < 0 ? $F{temporary_product_rotation_amount_tax} * -1 : $F{temporary_product_rotation_amount_tax}"
+msgstr "$F{temporary_product_rotation_amount_tax} < 0 ? $F{temporary_product_rotation_amount_tax} * -1 : $F{temporary_product_rotation_amount_tax}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_amount_untaxed} < 0 ? $F{temporary_vatregistry_amount_untaxed} * -1 : $F{temporary_vatregistry_amount_untaxed}"
-msgstr "$F{temporary_vatregistry_amount_untaxed} < 0 ? $F{temporary_vatregistry_amount_untaxed} * -1 : $F{temporary_vatregistry_amount_untaxed}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_amount_untaxed} < 0 ? $F{temporary_product_rotation_amount_untaxed} * -1 : $F{temporary_product_rotation_amount_untaxed}"
+msgstr "$F{temporary_product_rotation_amount_untaxed} < 0 ? $F{temporary_product_rotation_amount_untaxed} * -1 : $F{temporary_product_rotation_amount_untaxed}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_date}"
-msgstr "$F{temporary_vatregistry_date}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_date}"
+msgstr "$F{temporary_product_rotation_date}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_invoice_date}"
-msgstr "$F{temporary_vatregistry_invoice_date}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_invoice_date}"
+msgstr "$F{temporary_product_rotation_invoice_date}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_invoice_id}"
-msgstr "$F{temporary_vatregistry_invoice_id}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_invoice_id}"
+msgstr "$F{temporary_product_rotation_invoice_id}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_invoice_number}"
-msgstr "$F{temporary_vatregistry_invoice_number}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_invoice_number}"
+msgstr "$F{temporary_product_rotation_invoice_number}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_invoice_total}"
-msgstr "$F{temporary_vatregistry_invoice_total}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_invoice_total}"
+msgstr "$F{temporary_product_rotation_invoice_total}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_invoice_type}.contains( \"invoice\" ) ? \"Fattura\" : \"\" + \" \" + $F{temporary_vatregistry_invoice_type}.contains( \"refund\" ) ? \"Nota di Credito\" : \"\""
-msgstr "$F{temporary_vatregistry_invoice_type}.contains( \"invoice\" ) ? \"Fattura\" : \"\" + \" \" + $F{temporary_vatregistry_invoice_type}.contains( \"refund\" ) ? \"Nota di Credito\" : \"\""
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_invoice_type}.contains( \"invoice\" ) ? \"Fattura\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"refund\" ) ? \"Nota di Credito\" : \"\""
+msgstr "$F{temporary_product_rotation_invoice_type}.contains( \"invoice\" ) ? \"Fattura\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"refund\" ) ? \"Nota di Credito\" : \"\""
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_invoice_type}.contains( \"out\" ) ? \"Vendita\" : \"\" + \" \" + $F{temporary_vatregistry_invoice_type}.contains( \"in\" ) ? \"Acquisto\" : \"\""
-msgstr "$F{temporary_vatregistry_invoice_type}.contains( \"out\" ) ? \"Vendita\" : \"\" + \" \" + $F{temporary_vatregistry_invoice_type}.contains( \"in\" ) ? \"Acquisto\" : \"\""
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_invoice_type}.contains( \"out\" ) ? \"Vendita\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"in\" ) ? \"Acquisto\" : \"\""
+msgstr "$F{temporary_product_rotation_invoice_type}.contains( \"out\" ) ? \"Vendita\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"in\" ) ? \"Acquisto\" : \"\""
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_journal_id}"
-msgstr "$F{temporary_vatregistry_journal_id}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_journal_id}"
+msgstr "$F{temporary_product_rotation_journal_id}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_name}"
-msgstr "$F{temporary_vatregistry_name}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_name}"
+msgstr "$F{temporary_product_rotation_name}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "$F{temporary_vatregistry_period_id}"
-msgstr "$F{temporary_vatregistry_period_id}"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "$F{temporary_product_rotation_period_id}"
+msgstr "$F{temporary_product_rotation_period_id}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$P{REPORT_CONNECTION}"
 msgstr "$P{REPORT_CONNECTION}"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "$P{SUBREPORT_DIR} + \"registry_total.jasper\""
 msgstr "$P{SUBREPORT_DIR} + \"registry_total.jasper\""
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "($F{res_partner_street} == null ? \"\": $F{res_partner_street})+\" \"+ ($F{res_partner_street2} == null ? \"\" :$F{res_partner_street2})"
 msgstr "($F{res_partner_street} == null ? \"\": $F{res_partner_street})+\" \"+ ($F{res_partner_street2} == null ? \"\" :$F{res_partner_street2})"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "($F{res_partner_zip} == null ? \"\": $F{res_partner_zip})+\" \"+ ($F{res_partner_city} == null ? \"\" :$F{res_partner_city})+\" \"+ ($F{res_province_code}== null ? \"\" :$F{res_province_code})"
 msgstr "($F{res_partner_zip} == null ? \"\": $F{res_partner_zip})+\" \"+ ($F{res_partner_city} == null ? \"\" :$F{res_partner_city})+\" \"+ ($F{res_province_code}== null ? \"\" :$F{res_province_code})"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,amount_tax:0
-#: field:temporay.vatregisty.total,amount_tax:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,amount_tax:0
+#: field:temporary.stockrotation.total,amount_tax:0
 msgid "Amount Tax"
 msgstr "Amount Tax"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,amount_untaxed:0
-#: field:temporay.vatregisty.total,amount_untaxed:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,amount_untaxed:0
+#: field:temporary.stockrotation.total,amount_untaxed:0
 msgid "Amount Untaxed"
 msgstr "Amount Untaxed"
 
-#. module: l10n_it_jasper_vat_registry
-#: view:wizard.print.vatregistry:0
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
 msgid "Cancel"
 msgstr "Annulla"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Causale"
 msgstr "Causale"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,company_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,company_id:0
 msgid "Company"
 msgstr "Company"
 
-#. module: l10n_it_jasper_vat_registry
-#: selection:wizard.print.vatregistry,type:0
+#. module: stock_rotation_jasper
+#: selection:wizard.print.stockrotation,type:0
 msgid "Corrispettivi"
 msgstr "Corrispettivi"
 
-#. module: l10n_it_jasper_vat_registry
-#: selection:wizard.print.vatregistry,type:0
+#. module: stock_rotation_jasper
+#: selection:wizard.print.stockrotation,type:0
 msgid "Customer Invoices"
 msgstr "Customer Invoices"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Data Doc"
 msgstr "Data Doc"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Data Reg."
 msgstr "Data Reg."
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,date:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,date:0
 msgid "Date"
 msgstr "Data"
 
-#. module: l10n_it_jasper_vat_registry
-#: code:addons/l10n_it_jasper_vat_registry/wizard/print_vat_registry.py:214
+#. module: stock_rotation_jasper
+#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:214
 #, python-format
 msgid "Error !"
 msgstr "Errore !"
 
-#. module: l10n_it_jasper_vat_registry
-#: code:addons/l10n_it_jasper_vat_registry/wizard/print_vat_registry.py:156
+#. module: stock_rotation_jasper
+#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:156
 #, python-format
 msgid "Error!"
 msgstr "Errore !"
 
-#. module: l10n_it_jasper_vat_registry
-#: code:addons/l10n_it_jasper_vat_registry/wizard/print_vat_registry.py:156
+#. module: stock_rotation_jasper
+#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:156
 #, python-format
 msgid "Failed to load data"
 msgstr "Caricamento dati fallito, Riprova!"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Giornale:"
 msgstr "Giornale:"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Imponibile"
 msgstr "Imponibile"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Imposta"
 msgstr "Imposta"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,invoice_date:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,invoice_date:0
 msgid "Invoice Date"
 msgstr "Data Fattura"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,invoice_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,invoice_id:0
 msgid "Invoice ID"
 msgstr "ID Fattura"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,invoice_number:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,invoice_number:0
 msgid "Invoice Number"
 msgstr "Nr. Fattura"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,invoice_total:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,invoice_total:0
 msgid "Invoice Total"
 msgstr "Totale Fattura"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,invoice_type:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,invoice_type:0
 msgid "Invoice Type"
 msgstr "Tipo Fattura"
 
-#. module: l10n_it_jasper_vat_registry
-#: model:ir.ui.menu,name:l10n_it_jasper_vat_registry.menu_vat_registry
-msgid "Jasper VAT Registries"
-msgstr "Stampa Registri IVA"
+#. module: stock_rotation_jasper
+#: model:ir.ui.menu,name:stock_rotation_jasper.menu_stock_rotation
+msgid "Stock products rotation"
+msgstr "Stampa rotazione prodotti"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,journal_id:0
-#: field:temporay.vatregisty.total,journal_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,journal_id:0
+#: field:temporary.stockrotation.total,journal_id:0
 msgid "Journal"
 msgstr "Giornale"
 
-#. module: l10n_it_jasper_vat_registry
-#: view:wizard.print.vatregistry:0
-#: field:wizard.print.vatregistry,journal_ids:0
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
+#: field:wizard.print.stockrotation,journal_ids:0
 msgid "Journals"
 msgstr "Giornali"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:wizard.print.vatregistry,fiscal_page_base:0
+#. module: stock_rotation_jasper
+#: field:wizard.print.stockrotation,fiscal_page_base:0
 msgid "Last printed page"
 msgstr "Ultima Pagina Stampata"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:wizard.print.vatregistry,type:0
+#. module: stock_rotation_jasper
+#: field:wizard.print.stockrotation,type:0
 msgid "Layout"
 msgstr "Stile"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:wizard.print.vatregistry,message:0
+#. module: stock_rotation_jasper
+#: field:wizard.print.stockrotation,message:0
 msgid "Message"
 msgstr "Message"
 
-#. module: l10n_it_jasper_vat_registry
-#: code:addons/l10n_it_jasper_vat_registry/wizard/print_vat_registry.py:214
+#. module: stock_rotation_jasper
+#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:214
 #, python-format
 msgid "Nothing To Print"
 msgstr "Nulla da Stampare per i parametri selezionati"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Nr. Prot."
 msgstr "Nr. Prot."
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,name:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,name:0
 msgid "Number"
 msgstr "Number"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "N° Doc"
 msgstr "N° Doc"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,partner_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,partner_id:0
 msgid "Partner"
 msgstr "Partner"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,period_id:0
-#: field:temporay.vatregisty.total,period_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,period_id:0
+#: field:temporary.stockrotation.total,period_id:0
 msgid "Period"
 msgstr "Period"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Periodo:"
 msgstr "Periodo:"
 
-#. module: l10n_it_jasper_vat_registry
-#: view:wizard.print.vatregistry:0
-#: field:wizard.print.vatregistry,period_ids:0
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
+#: field:wizard.print.stockrotation,period_ids:0
 msgid "Periods"
 msgstr "Periodi"
 
-#. module: l10n_it_jasper_vat_registry
-#: view:wizard.print.vatregistry:0
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
 msgid "Print"
 msgstr "Stampa"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Ragione Sociale"
 msgstr "Ragione Sociale"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
-msgid "SELECT      temporary_vatregistry.\"amount_untaxed\" AS temporary_vatregistry_amount_untaxed,      temporary_vatregistry.\"name\" AS temporary_vatregistry_name,      temporary_vatregistry.\"invoice_type\" AS temporary_vatregistry_invoice_type,      temporary_vatregistry.\"invoice_date\" AS temporary_vatregistry_invoice_date,      temporary_vatregistry.\"invoice_total\" AS temporary_vatregistry_invoice_total,      temporary_vatregistry.\"amount_tax\" AS temporary_vatregistry_amount_tax,      temporary_vatregistry.\"date\" AS temporary_vatregistry_date,      temporary_vatregistry.\"invoice_number\" AS temporary_vatregistry_invoice_number,      temporary_vatregistry.\"tax_id\" AS temporary_vatregistry_tax_id,      temporary_vatregistry.\"create_date\" AS temporary_vatregistry_create_date,      res_company.\"name\" AS res_company_name,      res_partner.\"street\" AS res_partner_street,      res_partner.\"city\" AS res_partner_city,      res_partner.\"zip\" AS res_partner_zip,      res_partner.\"email\" AS res_partner_email,      res_partner.\"vat\" AS res_partner_vat,      res_partner.\"website\" AS res_partner_website,      res_partner.\"fax\" AS res_partner_fax,      res_partner.\"street2\" AS res_partner_street2,      res_partner.\"phone\" AS res_partner_phone,      res_partner.\"fiscalcode\" AS res_partner_fiscalcode,      res_province.\"code\" AS res_province_code,      res_province.\"name\" AS res_province_name,      res_partner_A.\"vat\" AS res_partner_A_vat,      res_partner_A.\"fiscalcode\" AS res_partner_A_fiscalcode,      res_partner_A.\"name\" AS res_partner_A_name,      account_journal.\"name\" AS account_journal_name,      account_period.\"name\" AS account_period_name,      account_period.\"date_stop\" AS account_period_date_stop,      account_period.\"date_start\" AS account_period_date_start,      account_tax_code.\"info\" AS account_tax_code_info,      account_tax_code.\"code\" AS account_tax_code_code,      account_tax_code.\"name\" AS account_tax_code_name,      temporary_vatregistry.\"journal_id\" AS temporary_vatregistry_journal_id,      temporary_vatregistry.\"period_id\" AS temporary_vatregistry_period_id,      temporary_vatregistry.\"invoice_id\" AS temporary_vatregistry_invoice_id FROM      \"public\".\"res_company\" res_company RIGHT OUTER JOIN \"public\".\"temporary_vatregistry\" temporary_vatregistry ON res_company.\"id\" = temporary_vatregistry.\"company_id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner ON res_company.\"partner_id\" = res_partner.\"id\"      LEFT OUTER JOIN \"public\".\"res_province\" res_province ON res_partner.\"province\" = res_province.\"id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner_A ON temporary_vatregistry.\"partner_id\" = res_partner_A.\"id\"      LEFT OUTER JOIN \"public\".\"account_journal\" account_journal ON temporary_vatregistry.\"journal_id\" = account_journal.\"id\"      LEFT OUTER JOIN \"public\".\"account_period\" account_period ON temporary_vatregistry.\"period_id\" = account_period.\"id\"      LEFT OUTER JOIN \"public\".\"account_tax_code\" account_tax_code ON temporary_vatregistry.\"tax_code_id\" = account_tax_code.\"id\" ORDER BY      account_journal.\"name\" ASC,      temporary_vatregistry.\"period_id\" ASC,      temporary_vatregistry.\"invoice_id\" ASC, temporary_vatregistry.\"date\" ASC"
-msgstr "SELECT      temporary_vatregistry.\"amount_untaxed\" AS temporary_vatregistry_amount_untaxed,      temporary_vatregistry.\"name\" AS temporary_vatregistry_name,      temporary_vatregistry.\"invoice_type\" AS temporary_vatregistry_invoice_type,      temporary_vatregistry.\"invoice_date\" AS temporary_vatregistry_invoice_date,      temporary_vatregistry.\"invoice_total\" AS temporary_vatregistry_invoice_total,      temporary_vatregistry.\"amount_tax\" AS temporary_vatregistry_amount_tax,      temporary_vatregistry.\"date\" AS temporary_vatregistry_date,      temporary_vatregistry.\"invoice_number\" AS temporary_vatregistry_invoice_number,      temporary_vatregistry.\"tax_id\" AS temporary_vatregistry_tax_id,      temporary_vatregistry.\"create_date\" AS temporary_vatregistry_create_date,      res_company.\"name\" AS res_company_name,      res_partner.\"street\" AS res_partner_street,      res_partner.\"city\" AS res_partner_city,      res_partner.\"zip\" AS res_partner_zip,      res_partner.\"email\" AS res_partner_email,      res_partner.\"vat\" AS res_partner_vat,      res_partner.\"website\" AS res_partner_website,      res_partner.\"fax\" AS res_partner_fax,      res_partner.\"street2\" AS res_partner_street2,      res_partner.\"phone\" AS res_partner_phone,      res_partner.\"fiscalcode\" AS res_partner_fiscalcode,      res_province.\"code\" AS res_province_code,      res_province.\"name\" AS res_province_name,      res_partner_A.\"vat\" AS res_partner_A_vat,      res_partner_A.\"fiscalcode\" AS res_partner_A_fiscalcode,      res_partner_A.\"name\" AS res_partner_A_name,      account_journal.\"name\" AS account_journal_name,      account_period.\"name\" AS account_period_name,      account_period.\"date_stop\" AS account_period_date_stop,      account_period.\"date_start\" AS account_period_date_start,      account_tax_code.\"info\" AS account_tax_code_info,      account_tax_code.\"code\" AS account_tax_code_code,      account_tax_code.\"name\" AS account_tax_code_name,      temporary_vatregistry.\"journal_id\" AS temporary_vatregistry_journal_id,      temporary_vatregistry.\"period_id\" AS temporary_vatregistry_period_id,      temporary_vatregistry.\"invoice_id\" AS temporary_vatregistry_invoice_id FROM      \"public\".\"res_company\" res_company RIGHT OUTER JOIN \"public\".\"temporary_vatregistry\" temporary_vatregistry ON res_company.\"id\" = temporary_vatregistry.\"company_id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner ON res_company.\"partner_id\" = res_partner.\"id\"      LEFT OUTER JOIN \"public\".\"res_province\" res_province ON res_partner.\"province\" = res_province.\"id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner_A ON temporary_vatregistry.\"partner_id\" = res_partner_A.\"id\"      LEFT OUTER JOIN \"public\".\"account_journal\" account_journal ON temporary_vatregistry.\"journal_id\" = account_journal.\"id\"      LEFT OUTER JOIN \"public\".\"account_period\" account_period ON temporary_vatregistry.\"period_id\" = account_period.\"id\"      LEFT OUTER JOIN \"public\".\"account_tax_code\" account_tax_code ON temporary_vatregistry.\"tax_code_id\" = account_tax_code.\"id\" ORDER BY      account_journal.\"name\" ASC,      temporary_vatregistry.\"period_id\" ASC,      temporary_vatregistry.\"invoice_id\" ASC, temporary_vatregistry.\"date\" ASC"
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
+msgid "SELECT      temporary_product_rotation.\"amount_untaxed\" AS temporary_product_rotation_amount_untaxed,      temporary_product_rotation.\"name\" AS temporary_product_rotation_name,      temporary_product_rotation.\"invoice_type\" AS temporary_product_rotation_invoice_type,      temporary_product_rotation.\"invoice_date\" AS temporary_product_rotation_invoice_date,      temporary_product_rotation.\"invoice_total\" AS temporary_product_rotation_invoice_total,      temporary_product_rotation.\"amount_tax\" AS temporary_product_rotation_amount_tax,      temporary_product_rotation.\"date\" AS temporary_product_rotation_date,      temporary_product_rotation.\"invoice_number\" AS temporary_product_rotation_invoice_number,      temporary_product_rotation.\"tax_id\" AS temporary_product_rotation_tax_id,      temporary_product_rotation.\"create_date\" AS temporary_product_rotation_create_date,      res_company.\"name\" AS res_company_name,      res_partner.\"street\" AS res_partner_street,      res_partner.\"city\" AS res_partner_city,      res_partner.\"zip\" AS res_partner_zip,      res_partner.\"email\" AS res_partner_email,      res_partner.\"vat\" AS res_partner_vat,      res_partner.\"website\" AS res_partner_website,      res_partner.\"fax\" AS res_partner_fax,      res_partner.\"street2\" AS res_partner_street2,      res_partner.\"phone\" AS res_partner_phone,      res_partner.\"fiscalcode\" AS res_partner_fiscalcode,      res_province.\"code\" AS res_province_code,      res_province.\"name\" AS res_province_name,      res_partner_A.\"vat\" AS res_partner_A_vat,      res_partner_A.\"fiscalcode\" AS res_partner_A_fiscalcode,      res_partner_A.\"name\" AS res_partner_A_name,      account_journal.\"name\" AS account_journal_name,      account_period.\"name\" AS account_period_name,      account_period.\"date_stop\" AS account_period_date_stop,      account_period.\"date_start\" AS account_period_date_start,      account_tax_code.\"info\" AS account_tax_code_info,      account_tax_code.\"code\" AS account_tax_code_code,      account_tax_code.\"name\" AS account_tax_code_name,      temporary_product_rotation.\"journal_id\" AS temporary_product_rotation_journal_id,      temporary_product_rotation.\"period_id\" AS temporary_product_rotation_period_id,      temporary_product_rotation.\"invoice_id\" AS temporary_product_rotation_invoice_id FROM      \"public\".\"res_company\" res_company RIGHT OUTER JOIN \"public\".\"temporary_product_rotation\" temporary_product_rotation ON res_company.\"id\" = temporary_product_rotation.\"company_id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner ON res_company.\"partner_id\" = res_partner.\"id\"      LEFT OUTER JOIN \"public\".\"res_province\" res_province ON res_partner.\"province\" = res_province.\"id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner_A ON temporary_product_rotation.\"partner_id\" = res_partner_A.\"id\"      LEFT OUTER JOIN \"public\".\"account_journal\" account_journal ON temporary_product_rotation.\"journal_id\" = account_journal.\"id\"      LEFT OUTER JOIN \"public\".\"account_period\" account_period ON temporary_product_rotation.\"period_id\" = account_period.\"id\"      LEFT OUTER JOIN \"public\".\"account_tax_code\" account_tax_code ON temporary_product_rotation.\"tax_code_id\" = account_tax_code.\"id\" ORDER BY      account_journal.\"name\" ASC,      temporary_product_rotation.\"period_id\" ASC,      temporary_product_rotation.\"invoice_id\" ASC, temporary_product_rotation.\"date\" ASC"
+msgstr "SELECT      temporary_product_rotation.\"amount_untaxed\" AS temporary_product_rotation_amount_untaxed,      temporary_product_rotation.\"name\" AS temporary_product_rotation_name,      temporary_product_rotation.\"invoice_type\" AS temporary_product_rotation_invoice_type,      temporary_product_rotation.\"invoice_date\" AS temporary_product_rotation_invoice_date,      temporary_product_rotation.\"invoice_total\" AS temporary_product_rotation_invoice_total,      temporary_product_rotation.\"amount_tax\" AS temporary_product_rotation_amount_tax,      temporary_product_rotation.\"date\" AS temporary_product_rotation_date,      temporary_product_rotation.\"invoice_number\" AS temporary_product_rotation_invoice_number,      temporary_product_rotation.\"tax_id\" AS temporary_product_rotation_tax_id,      temporary_product_rotation.\"create_date\" AS temporary_product_rotation_create_date,      res_company.\"name\" AS res_company_name,      res_partner.\"street\" AS res_partner_street,      res_partner.\"city\" AS res_partner_city,      res_partner.\"zip\" AS res_partner_zip,      res_partner.\"email\" AS res_partner_email,      res_partner.\"vat\" AS res_partner_vat,      res_partner.\"website\" AS res_partner_website,      res_partner.\"fax\" AS res_partner_fax,      res_partner.\"street2\" AS res_partner_street2,      res_partner.\"phone\" AS res_partner_phone,      res_partner.\"fiscalcode\" AS res_partner_fiscalcode,      res_province.\"code\" AS res_province_code,      res_province.\"name\" AS res_province_name,      res_partner_A.\"vat\" AS res_partner_A_vat,      res_partner_A.\"fiscalcode\" AS res_partner_A_fiscalcode,      res_partner_A.\"name\" AS res_partner_A_name,      account_journal.\"name\" AS account_journal_name,      account_period.\"name\" AS account_period_name,      account_period.\"date_stop\" AS account_period_date_stop,      account_period.\"date_start\" AS account_period_date_start,      account_tax_code.\"info\" AS account_tax_code_info,      account_tax_code.\"code\" AS account_tax_code_code,      account_tax_code.\"name\" AS account_tax_code_name,      temporary_product_rotation.\"journal_id\" AS temporary_product_rotation_journal_id,      temporary_product_rotation.\"period_id\" AS temporary_product_rotation_period_id,      temporary_product_rotation.\"invoice_id\" AS temporary_product_rotation_invoice_id FROM      \"public\".\"res_company\" res_company RIGHT OUTER JOIN \"public\".\"temporary_product_rotation\" temporary_product_rotation ON res_company.\"id\" = temporary_product_rotation.\"company_id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner ON res_company.\"partner_id\" = res_partner.\"id\"      LEFT OUTER JOIN \"public\".\"res_province\" res_province ON res_partner.\"province\" = res_province.\"id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner_A ON temporary_product_rotation.\"partner_id\" = res_partner_A.\"id\"      LEFT OUTER JOIN \"public\".\"account_journal\" account_journal ON temporary_product_rotation.\"journal_id\" = account_journal.\"id\"      LEFT OUTER JOIN \"public\".\"account_period\" account_period ON temporary_product_rotation.\"period_id\" = account_period.\"id\"      LEFT OUTER JOIN \"public\".\"account_tax_code\" account_tax_code ON temporary_product_rotation.\"tax_code_id\" = account_tax_code.\"id\" ORDER BY      account_journal.\"name\" ASC,      temporary_product_rotation.\"period_id\" ASC,      temporary_product_rotation.\"invoice_id\" ASC, temporary_product_rotation.\"date\" ASC"
 
-#. module: l10n_it_jasper_vat_registry
-#: help:wizard.print.vatregistry,journal_ids:0
+#. module: stock_rotation_jasper
+#: help:wizard.print.stockrotation,journal_ids:0
 msgid "Select journals you want retrieve documents from"
 msgstr "Seleziona i giornali che vuoi stampare"
 
-#. module: l10n_it_jasper_vat_registry
-#: help:wizard.print.vatregistry,period_ids:0
+#. module: stock_rotation_jasper
+#: help:wizard.print.stockrotation,period_ids:0
 msgid "Select periods you want retrieve documents from"
 msgstr "Seleziona i periodi interessati"
 
-#. module: l10n_it_jasper_vat_registry
-#: selection:wizard.print.vatregistry,type:0
+#. module: stock_rotation_jasper
+#: selection:wizard.print.stockrotation,type:0
 msgid "Supplier Invoices"
 msgstr "Supplier Invoices"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,tax_code_id:0
-#: field:temporay.vatregisty.total,tax_code_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,tax_code_id:0
+#: field:temporary.stockrotation.total,tax_code_id:0
 msgid "Tax Account"
 msgstr "Tax Account"
 
-#. module: l10n_it_jasper_vat_registry
-#: field:temporary.vatregistry,tax_id:0
-#: field:temporay.vatregisty.total,tax_id:0
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,tax_id:0
+#: field:temporary.stockrotation.total,tax_id:0
 msgid "Tax ID"
 msgstr "Tax ID"
 
-#. module: l10n_it_jasper_vat_registry
-#: view:wizard.print.vatregistry:0
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
 msgid "Tax Journal"
 msgstr "Tax Journal"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Tipo IVA Assoggettamento"
 msgstr "Tipo IVA Assoggettamento"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Totale Fattura"
 msgstr "Totale Fattura"
 
-#. module: l10n_it_jasper_vat_registry
-#: report:vat_jr_registry:0
+#. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 msgid "Totali Registro"
 msgstr "Totali Registro"
 
-#. module: l10n_it_jasper_vat_registry
-#: model:ir.actions.act_window,name:l10n_it_jasper_vat_registry.action_vat_registry
-msgid "VAT Registry"
+#. module: stock_rotation_jasper
+#: model:ir.actions.act_window,name:stock_rotation_jasper.action_stock_rotation
+msgid "Stock products rotation"
 msgstr "Registro IVA"
 
-#. module: l10n_it_jasper_vat_registry
-#: model:ir.actions.report.xml,name:l10n_it_jasper_vat_registry.report_jr_vat_registry
-msgid "Vat Registry"
-msgstr "Vat Registry"
+#. module: stock_rotation_jasper
+#: model:ir.actions.report.xml,name:stock_rotation_jasper.report_jr_stock_rotation
+msgid "Stock products rotation"
+msgstr "Stock products rotation"
 
-#. module: l10n_it_jasper_vat_registry
-#: view:wizard.print.vatregistry:0
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
 msgid "or"
 msgstr "o"
 
-#. module: l10n_it_jasper_vat_registry
-#: model:ir.model,name:l10n_it_jasper_vat_registry.model_temporary_vatregistry
-msgid "temporary.vatregistry"
-msgstr "temporary.vatregistry"
+#. module: stock_rotation_jasper
+#: model:ir.model,name:stock_rotation_jasper.model_temporary_product_rotation
+msgid "temporary.product_rotation"
+msgstr "temporary.product_rotation"
 
-#. module: l10n_it_jasper_vat_registry
-#: model:ir.model,name:l10n_it_jasper_vat_registry.model_temporay_vatregisty_total
-msgid "temporay.vatregisty.total"
-msgstr "temporay.vatregisty.total"
-
-#. module: l10n_it_jasper_vat_registry
-#: model:ir.model,name:l10n_it_jasper_vat_registry.model_wizard_print_vatregistry
-msgid "wizard.print.vatregistry"
-msgstr "wizard.print.vatregistry"
+#. module: stock_rotation_jasper
+#: model:ir.model,name:stock_rotation_jasper.model_wizard_print_stockrotation
+msgid "wizard.print.stockrotation"
+msgstr "wizard.print.stockrotation"
 

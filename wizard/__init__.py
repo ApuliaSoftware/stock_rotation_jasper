@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Andre@ (<a.gallina@cgsoftware.it>)
+#    Copyright (C) 2015 Apulia Software srl (info@apuliasoftware.it)
 #    All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-import print_vat_registry
+import stock_rotation_wizard

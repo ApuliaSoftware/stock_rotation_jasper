@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Apulia Software S.r.l. (<info@apuliasoftware.it>)
+#    Copyright (C) 2015s Apulia Software S.r.l. (<info@apuliasoftware.it>)
 #    All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,17 +20,17 @@
 ##############################################################################
 
 {
-    'name': "VAT Registry - Jasper Reports",
+    'name': "Stock products rotation with Jasper Reports",
     'version': '0.1',
-    'category': 'accoont',
-    'description': """Print of VAT Registry with Jasper Reports""",
+    'category': 'stock',
+    'description': """Prints products rotation in stock with Jasper Reports""",
     'author': 'Apulia Software S.r.l.',
     'website': 'www.apuliasoftware.it',
     'license': 'AGPL-3',
     "depends": ['jasper_reports',
-                'account'
+                'stock'
                 ],
-    "init_xml": ['wizard/print_vat_registry.xml',
+    "init_xml": ['wizard/stock_rotation_view.xml',
                  'report.xml',
                  'security/ir.model.access.csv',
                  ],

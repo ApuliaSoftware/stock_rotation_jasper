@@ -1,4 +1,3 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
 
-TMP1_temporary_vatregistry, temporary_vatregistry,model_temporary_vatregistry,,1,1,1,1
-TMP2_temporay_vatregisty_total, temporay_vatregisty_total,model_temporay_vatregisty_total,,1,1,1,1
+TMP1_temporary_product_rotation, temporary_product_rotation,model_temporary_product_rotation,,1,1,1,1
