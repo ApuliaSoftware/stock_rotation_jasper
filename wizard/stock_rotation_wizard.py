@@ -26,82 +26,55 @@ import time
 
 
 class temporary_product_rotation(orm.Model):
+    # temporary table for data manipulation
 
     _name = 'temporary.product_rotation'
 
     _columns = {
         'company_id': fields.many2one('res.company', 'Company'),
-        'product_id': fields.char('Number', size=64),
+        'product_id': fields.many2one('product.product', 'Product'),
         'date': fields.date('Date'),
-        'invoice_number': fields.char('Invoice Number', size=64),
-        'invoice_id': fields.many2one('account.invoice', 'Invoice ID'),
-        'invoice_date': fields.date('Invoice Date'),
-        'partner_id': fields.many2one('res.partner', 'Partner'),
-        'invoice_type': fields.char('Invoice Type', size=64),
-        'invoice_total': fields.float('Invoice Total'),
-        'tax_id': fields.many2one('account.tax', 'Tax ID'),
-        'tax_code_id': fields.many2one('account.tax.code', 'Tax Account'),
-        'amount_untaxed': fields.float('Amount Untaxed'),
-        'amount_tax': fields.float('Amount Tax'),
-        'journal_id': fields.many2one('account.journal', 'Journal'),
-        'period_id': fields.many2one('account.period', 'Period'),
-        }
+        'quantity': fields.float('Quantity'),
+        'user_id': fields.many2one('res.users', 'User'),
+    }
 
-    def _pulisci(self, cr, uid, context):
-        ids = self.search(cr, uid, [])
+    def _clean_data(self, cr, uid, context):
+        ids = self.search(cr, uid, [('user_id', '=', uid)])
         self.unlink(cr, uid, ids, context)
         return True
 
-    def load_data(self, cr, uid, ids, paramters, context=None):
-        self._pulisci(cr, uid, context)
-        #~ move_obj = self.pool.get('account.move')
-        invoice_obj = self.pool.get('account.invoice')
-        #~ move_ids = move_obj.search(cr, uid, [
-            #~ ('journal_id', 'in', [j.id for j in paramters.journal_ids]),
-            #~ ('period_id', 'in', [p.id for p in paramters.period_ids]),
-            #~ ('state', '=', 'posted'),
-            #~ ], order='date')
-        invoice_ids = invoice_obj.search(cr, uid, [
-            ('journal_id', 'in', [j.id for j in paramters.journal_ids]),
-            ('period_id', 'in', [p.id for p in paramters.period_ids]),
-            ('state', 'not in', ('posted', 'draft',
-                                 'cancel', 'proforma', 'proforma2')),
-            ], order='registration_date')
-        if not invoice_ids:
-            #~ TODO
-            return False
-        line_ids = []
-        for invoice in invoice_obj.browse(cr, uid, invoice_ids, context):
-            tax_sign = 1
-            if invoice.state in ('proforma', 'proforma2'):
-                continue
-            invoice_number = invoice.number
-            if invoice.type in ('in_invoice', 'out_refund'):
-                tax_sign = -1
-                invoice_number = invoice.supplier_invoice_number
-            for tax_line in invoice.tax_line:
-                vals = {
-                    'company_id': invoice.company_id.id,
-                    'name': invoice.move_id.name,
-                    'date': invoice.registration_date,
-                    'invoice_number': invoice_number,
-                    'invoice_id': invoice.id,
-                    'invoice_date': invoice.date_invoice,
-                    'partner_id': invoice.partner_id.id,
-                    'invoice_type': invoice.type,
-                    'invoice_total': invoice.amount_total,
-                    #~ 'tax_id': move.account_tax_id.id,
-                    'tax_code_id': tax_line.tax_code_id.id,
-                    'amount_untaxed': tax_line.base * tax_sign,
-                    'amount_tax': tax_line.amount * tax_sign,
-                    'journal_id': invoice.journal_id.id,
-                    'period_id': invoice.period_id.id,
-                    }
-                line_ids.append(self.create(cr, uid, vals, context))
-        ok = self.pool.get('temporary.stockrotation.total').load_data(
-            cr, uid, line_ids, context)
-        if not ok:
-            raise osv.except_osv(_('Error!'), _('Failed to load data'))
+    def load_data(self, cr, uid, ids, parameters, context=None):
+        self._clean_data(cr, uid, context)
+        sale_obj = self.pool['sale.order']
+        sale_line_obj = self.pool['sale.order.line']
+        product_ids = []
+        sale_ids = sale_obj.search(cr, uid, [
+            ('date_order', '>=', parameters.start_date),
+            ('date_order', '<=', parameters.end_date),
+        ])
+        if parameters.product_ids:
+            product_ids = [p.id for p in parameters.product_ids]
+        if parameters.category_ids:
+            product_ids = product_obj.search(
+                cr, uid, ['|', ('categ_id', 'in', parameters.category_ids),
+                          ('id', 'in', product_ids)])
+        args = [('order_id', 'in', sale_ids),
+                ('state', 'not in', ('draft', 'sent', 'cancel')),]
+        if product_ids:
+            args.append(('product_id', 'in', product_ids))
+        sale_line_ids = sale_line_obj.search(cr, uid, args)
+        sale_lines = sale_line_obj.browse(cr, uid, sale_line_ids)
+
+        result = []
+        for line in sale_lines:
+            vals = {
+                'company_id': line.order_id.company_id.id,
+                'product_id': line.product_id.id,
+                'date': line.order_id.date_order,
+                'quantity': line.product_uom_qty,
+                'user_id': uid,
+            }
+            result.append(self.create(cr, uid, vals, context))
         return True
 
 
@@ -126,18 +99,18 @@ class wizard_print_stockrotation(orm.TransientModel):
             'product_rel', 'product_id', 'rotation_id',
             'Journals',
             help='Select products you want to print or none for all'),
-        'start_date': fields.datetime('Start date', required=True),
-        'end_date': fields.datetime('End date', required=True),
+        'start_date': fields.date('Start date', required=True),
+        'end_date': fields.date('End date', required=True),
         }
 
     _defaults = {
-        'start_date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
-        'end_date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
+        'start_date': fields.date.context_today,
+        'end_date': fields.date.context_today,
         }
 
     def start_printing(self, cr, uid, ids, context={}):
         parameters = self.browse(cr, uid, ids, context)[0]
-        ok = self.pool.get('temporary.product_rotation').load_data(
+        ok = self.pool['temporary.product_rotation'].load_data(
             cr, uid, ids, parameters, context)
         if ok:
             data = {}
@@ -145,8 +118,8 @@ class wizard_print_stockrotation(orm.TransientModel):
             data['model'] = context.get('active_model', 'ir.ui.menu')
             data['form'] = {}
             data['form'][
-                'parameters'] = {'last_page': parameters.fiscal_page_base,
-                                 'last_year': parameters.fiscal_year_page,
+                'parameters'] = {'start_date': parameters.start_date,
+                                 'end_date': parameters.end_date,
                                  }
             return {'type': 'ir.actions.report.xml',
                     'report_name': 'stock_rotation_jr',
@@ -154,4 +127,4 @@ class wizard_print_stockrotation(orm.TransientModel):
                     }
         else:
             raise osv.except_osv(_('Error !'), _('Nothing To Print'))
-        return {'type': 'ir.actions.act_window_close'}
+        #return {'type': 'ir.actions.act_window_close'}
