@@ -75,7 +75,7 @@ class temporary_product_rotation(orm.Model):
                 'user_id': uid,
             }
             result.append(self.create(cr, uid, vals, context))
-        return True
+        return result
 
 
 class wizard_print_stockrotation(orm.TransientModel):
@@ -110,12 +110,12 @@ class wizard_print_stockrotation(orm.TransientModel):
 
     def start_printing(self, cr, uid, ids, context={}):
         parameters = self.browse(cr, uid, ids, context)[0]
-        ok = self.pool['temporary.product_rotation'].load_data(
+        data_ids = self.pool['temporary.product_rotation'].load_data(
             cr, uid, ids, parameters, context)
-        if ok:
+        if data_ids:
             data = {}
-            data['ids'] = context.get('active_ids', [])
-            data['model'] = context.get('active_model', 'ir.ui.menu')
+            data['ids'] = data_ids
+            data['model'] = 'temporary.product_rotation'
             data['form'] = {}
             data['form'][
                 'parameters'] = {'start_date': parameters.start_date,
@@ -127,4 +127,3 @@ class wizard_print_stockrotation(orm.TransientModel):
                     }
         else:
             raise osv.except_osv(_('Error !'), _('Nothing To Print'))
-        #return {'type': 'ir.actions.act_window_close'}

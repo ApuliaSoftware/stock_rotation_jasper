@@ -6,7 +6,7 @@
         <record id="report_jr_stock_rotation" model="ir.actions.report.xml">
                 <field name="name">Stock Rotation</field>
                 <field name="type">ir.actions.report.xml</field>
-                <field name="model">product.product</field>
+                <field name="model">temporary.stockrotation</field>
                 <field name="report_name">stock_rotation_jr</field>
                 <field name="report_rml">stock_rotation_jasper/report/stock_rotation.jrxml</field>
                 <field name="report_type">pdf</field>

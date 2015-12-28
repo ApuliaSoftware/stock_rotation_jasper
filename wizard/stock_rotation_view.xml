@@ -8,7 +8,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Stock rotation products" version="7.0">
-                    <group colspan="4">
+                    <group>
                         <field name="start_date" colspan="2"/>
                         <field name="end_date" colspan="2"/>
                         <separator string="Catergories" colspan="4"/>
