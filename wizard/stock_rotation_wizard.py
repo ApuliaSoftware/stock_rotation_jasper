@@ -116,14 +116,14 @@ class wizard_print_stockrotation(orm.TransientModel):
             data = {}
             data['ids'] = data_ids
             data['model'] = 'temporary.product_rotation'
-            data['form'] = {}
-            data['form'][
-                'parameters'] = {'start_date': parameters.start_date,
-                                 'end_date': parameters.end_date,
-                                 }
-            return {'type': 'ir.actions.report.xml',
-                    'report_name': 'stock_rotation_jr',
-                    'datas': data,
-                    }
+            data['parameters'] = {
+                'start_date': parameters.start_date,
+                'end_date': parameters.end_date,
+            }
+            return {
+                'type': 'ir.actions.report.xml',
+                'report_name': 'stock_rotation_jr',
+                'datas': data,
+            }
         else:
             raise osv.except_osv(_('Error !'), _('Nothing To Print'))
