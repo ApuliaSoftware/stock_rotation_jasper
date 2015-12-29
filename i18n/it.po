@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-14 13:28+0000\n"
-"PO-Revision-Date: 2014-07-14 13:28+0000\n"
+"POT-Creation-Date: 2015-12-29 14:15+0000\n"
+"PO-Revision-Date: 2015-12-29 14:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,140 +22,38 @@ msgstr "\" \" + $V{PAGE_NUMBER}"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "\"./\""
-msgstr "\"./\""
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "\"P.I. \" + ($F{res_partner_a_vat} == null ? \"\": $F{res_partner_a_vat})+ \" C.F. \" + ($F{res_partner_a_fiscalcode} == null ? \"\" :$F{res_partner_a_fiscalcode})"
-msgstr "\"P.I. \" + ($F{res_partner_a_vat} == null ? \"\": $F{res_partner_a_vat})+ \" C.F. \" + ($F{res_partner_a_fiscalcode} == null ? \"\" :$F{res_partner_a_fiscalcode})"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "\"Pagina \"+$V{PAGE_NUMBER}+\" di\""
+msgid "\"Page \"+$V{PAGE_NUMBER}+\" of\""
 msgstr "\"Pagina \"+$V{PAGE_NUMBER}+\" di\""
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "\"Partita IVA: \" + ($F{res_partner_vat} == null ? \"\": $F{res_partner_vat})+ \" Codice Fiscale: \" + ($F{res_partner_fiscalcode} == null ? \"\" :$F{res_partner_fiscalcode})"
-msgstr "\"Partita IVA: \" + ($F{res_partner_vat} == null ? \"\": $F{res_partner_vat})+ \" Codice Fiscale: \" + ($F{res_partner_fiscalcode} == null ? \"\" :$F{res_partner_fiscalcode})"
+msgid "\"STOCK ROTATION FROM \" + $P{start_date}.toString() + \" TO \" + $P{end_date}.toString()"
+msgstr "\"ROTAZIONE MAGAZZINO DAL \" + $P{start_date}.toString() + \" AL \" + $P{end_date}.toString()"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "$F{account_journal_name}"
-msgstr "$F{account_journal_name}"
+msgid "$F{Data-date}"
+msgstr "$F{Data-date}"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "$F{account_period_name}"
-msgstr "$F{account_period_name}"
+msgid "$F{Name-name}"
+msgstr "$F{Name-name}"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "$F{account_tax_code_name}"
-msgstr "$F{account_tax_code_name}"
+msgid "$F{Nome_Azienda-name}"
+msgstr "$F{Nome_Azienda-name}"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "$F{res_company_name}"
-msgstr "$F{res_company_name}"
+msgid "$F{Quantity-quantity}"
+msgstr "$F{Quantity-quantity}"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "$F{res_partner_a_name}"
-msgstr "$F{res_partner_a_name}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_amount_tax} < 0 ? $F{temporary_product_rotation_amount_tax} * -1 : $F{temporary_product_rotation_amount_tax}"
-msgstr "$F{temporary_product_rotation_amount_tax} < 0 ? $F{temporary_product_rotation_amount_tax} * -1 : $F{temporary_product_rotation_amount_tax}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_amount_untaxed} < 0 ? $F{temporary_product_rotation_amount_untaxed} * -1 : $F{temporary_product_rotation_amount_untaxed}"
-msgstr "$F{temporary_product_rotation_amount_untaxed} < 0 ? $F{temporary_product_rotation_amount_untaxed} * -1 : $F{temporary_product_rotation_amount_untaxed}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_date}"
-msgstr "$F{temporary_product_rotation_date}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_invoice_date}"
-msgstr "$F{temporary_product_rotation_invoice_date}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_invoice_id}"
-msgstr "$F{temporary_product_rotation_invoice_id}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_invoice_number}"
-msgstr "$F{temporary_product_rotation_invoice_number}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_invoice_total}"
-msgstr "$F{temporary_product_rotation_invoice_total}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_invoice_type}.contains( \"invoice\" ) ? \"Fattura\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"refund\" ) ? \"Nota di Credito\" : \"\""
-msgstr "$F{temporary_product_rotation_invoice_type}.contains( \"invoice\" ) ? \"Fattura\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"refund\" ) ? \"Nota di Credito\" : \"\""
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_invoice_type}.contains( \"out\" ) ? \"Vendita\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"in\" ) ? \"Acquisto\" : \"\""
-msgstr "$F{temporary_product_rotation_invoice_type}.contains( \"out\" ) ? \"Vendita\" : \"\" + \" \" + $F{temporary_product_rotation_invoice_type}.contains( \"in\" ) ? \"Acquisto\" : \"\""
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_journal_id}"
-msgstr "$F{temporary_product_rotation_journal_id}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_name}"
-msgstr "$F{temporary_product_rotation_name}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$F{temporary_product_rotation_period_id}"
-msgstr "$F{temporary_product_rotation_period_id}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$P{REPORT_CONNECTION}"
-msgstr "$P{REPORT_CONNECTION}"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "$P{SUBREPORT_DIR} + \"registry_total.jasper\""
-msgstr "$P{SUBREPORT_DIR} + \"registry_total.jasper\""
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "($F{res_partner_street} == null ? \"\": $F{res_partner_street})+\" \"+ ($F{res_partner_street2} == null ? \"\" :$F{res_partner_street2})"
-msgstr "($F{res_partner_street} == null ? \"\": $F{res_partner_street})+\" \"+ ($F{res_partner_street2} == null ? \"\" :$F{res_partner_street2})"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "($F{res_partner_zip} == null ? \"\": $F{res_partner_zip})+\" \"+ ($F{res_partner_city} == null ? \"\" :$F{res_partner_city})+\" \"+ ($F{res_province_code}== null ? \"\" :$F{res_province_code})"
-msgstr "($F{res_partner_zip} == null ? \"\": $F{res_partner_zip})+\" \"+ ($F{res_partner_city} == null ? \"\" :$F{res_partner_city})+\" \"+ ($F{res_province_code}== null ? \"\" :$F{res_province_code})"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,amount_tax:0
-#: field:temporary.stockrotation.total,amount_tax:0
-msgid "Amount Tax"
-msgstr "Amount Tax"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,amount_untaxed:0
-#: field:temporary.stockrotation.total,amount_untaxed:0
-msgid "Amount Untaxed"
-msgstr "Amount Untaxed"
+msgid "/data/record"
+msgstr "/data/record"
 
 #. module: stock_rotation_jasper
 #: view:wizard.print.stockrotation:0
@@ -163,172 +61,52 @@ msgid "Cancel"
 msgstr "Annulla"
 
 #. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Causale"
-msgstr "Causale"
+#: field:wizard.print.stockrotation,category_ids:0
+msgid "Categories"
+msgstr "Categorie"
+
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
+msgid "Catergories"
+msgstr "Catergorie"
 
 #. module: stock_rotation_jasper
 #: field:temporary.product_rotation,company_id:0
 msgid "Company"
-msgstr "Company"
-
-#. module: stock_rotation_jasper
-#: selection:wizard.print.stockrotation,type:0
-msgid "Corrispettivi"
-msgstr "Corrispettivi"
-
-#. module: stock_rotation_jasper
-#: selection:wizard.print.stockrotation,type:0
-msgid "Customer Invoices"
-msgstr "Customer Invoices"
+msgstr "Azienda"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "Data Doc"
-msgstr "Data Doc"
+msgid "Company-company_id/Nome_Azienda-name"
+msgstr "Company-company_id/Nome_Azienda-name"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "Data Reg."
-msgstr "Data Reg."
+msgid "Data-date"
+msgstr "Data-date"
 
 #. module: stock_rotation_jasper
+#: report:stock_rotation_jr:0
 #: field:temporary.product_rotation,date:0
 msgid "Date"
 msgstr "Data"
 
 #. module: stock_rotation_jasper
-#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:214
+#: field:wizard.print.stockrotation,end_date:0
+msgid "End date"
+msgstr "End date"
+
+#. module: stock_rotation_jasper
+#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:129
 #, python-format
 msgid "Error !"
 msgstr "Errore !"
 
 #. module: stock_rotation_jasper
-#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:156
-#, python-format
-msgid "Error!"
-msgstr "Errore !"
-
-#. module: stock_rotation_jasper
-#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:156
-#, python-format
-msgid "Failed to load data"
-msgstr "Caricamento dati fallito, Riprova!"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Giornale:"
-msgstr "Giornale:"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Imponibile"
-msgstr "Imponibile"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Imposta"
-msgstr "Imposta"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,invoice_date:0
-msgid "Invoice Date"
-msgstr "Data Fattura"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,invoice_id:0
-msgid "Invoice ID"
-msgstr "ID Fattura"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,invoice_number:0
-msgid "Invoice Number"
-msgstr "Nr. Fattura"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,invoice_total:0
-msgid "Invoice Total"
-msgstr "Totale Fattura"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,invoice_type:0
-msgid "Invoice Type"
-msgstr "Tipo Fattura"
-
-#. module: stock_rotation_jasper
-#: model:ir.ui.menu,name:stock_rotation_jasper.menu_stock_rotation
-msgid "Stock products rotation"
-msgstr "Stampa rotazione prodotti"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,journal_id:0
-#: field:temporary.stockrotation.total,journal_id:0
-msgid "Journal"
-msgstr "Giornale"
-
-#. module: stock_rotation_jasper
-#: view:wizard.print.stockrotation:0
-#: field:wizard.print.stockrotation,journal_ids:0
-msgid "Journals"
-msgstr "Giornali"
-
-#. module: stock_rotation_jasper
-#: field:wizard.print.stockrotation,fiscal_page_base:0
-msgid "Last printed page"
-msgstr "Ultima Pagina Stampata"
-
-#. module: stock_rotation_jasper
-#: field:wizard.print.stockrotation,type:0
-msgid "Layout"
-msgstr "Stile"
-
-#. module: stock_rotation_jasper
-#: field:wizard.print.stockrotation,message:0
-msgid "Message"
-msgstr "Message"
-
-#. module: stock_rotation_jasper
-#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:214
+#: code:addons/stock_rotation_jasper/wizard/stock_rotation_wizard.py:129
 #, python-format
 msgid "Nothing To Print"
 msgstr "Nulla da Stampare per i parametri selezionati"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Nr. Prot."
-msgstr "Nr. Prot."
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,name:0
-msgid "Number"
-msgstr "Number"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "N° Doc"
-msgstr "N° Doc"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,partner_id:0
-msgid "Partner"
-msgstr "Partner"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,period_id:0
-#: field:temporary.stockrotation.total,period_id:0
-msgid "Period"
-msgstr "Period"
-
-#. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Periodo:"
-msgstr "Periodo:"
-
-#. module: stock_rotation_jasper
-#: view:wizard.print.stockrotation:0
-#: field:wizard.print.stockrotation,period_ids:0
-msgid "Periods"
-msgstr "Periodi"
 
 #. module: stock_rotation_jasper
 #: view:wizard.print.stockrotation:0
@@ -337,70 +115,67 @@ msgstr "Stampa"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "Ragione Sociale"
-msgstr "Ragione Sociale"
+#: field:temporary.product_rotation,product_id:0
+msgid "Product"
+msgstr "Prodotto"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "SELECT      temporary_product_rotation.\"amount_untaxed\" AS temporary_product_rotation_amount_untaxed,      temporary_product_rotation.\"name\" AS temporary_product_rotation_name,      temporary_product_rotation.\"invoice_type\" AS temporary_product_rotation_invoice_type,      temporary_product_rotation.\"invoice_date\" AS temporary_product_rotation_invoice_date,      temporary_product_rotation.\"invoice_total\" AS temporary_product_rotation_invoice_total,      temporary_product_rotation.\"amount_tax\" AS temporary_product_rotation_amount_tax,      temporary_product_rotation.\"date\" AS temporary_product_rotation_date,      temporary_product_rotation.\"invoice_number\" AS temporary_product_rotation_invoice_number,      temporary_product_rotation.\"tax_id\" AS temporary_product_rotation_tax_id,      temporary_product_rotation.\"create_date\" AS temporary_product_rotation_create_date,      res_company.\"name\" AS res_company_name,      res_partner.\"street\" AS res_partner_street,      res_partner.\"city\" AS res_partner_city,      res_partner.\"zip\" AS res_partner_zip,      res_partner.\"email\" AS res_partner_email,      res_partner.\"vat\" AS res_partner_vat,      res_partner.\"website\" AS res_partner_website,      res_partner.\"fax\" AS res_partner_fax,      res_partner.\"street2\" AS res_partner_street2,      res_partner.\"phone\" AS res_partner_phone,      res_partner.\"fiscalcode\" AS res_partner_fiscalcode,      res_province.\"code\" AS res_province_code,      res_province.\"name\" AS res_province_name,      res_partner_A.\"vat\" AS res_partner_A_vat,      res_partner_A.\"fiscalcode\" AS res_partner_A_fiscalcode,      res_partner_A.\"name\" AS res_partner_A_name,      account_journal.\"name\" AS account_journal_name,      account_period.\"name\" AS account_period_name,      account_period.\"date_stop\" AS account_period_date_stop,      account_period.\"date_start\" AS account_period_date_start,      account_tax_code.\"info\" AS account_tax_code_info,      account_tax_code.\"code\" AS account_tax_code_code,      account_tax_code.\"name\" AS account_tax_code_name,      temporary_product_rotation.\"journal_id\" AS temporary_product_rotation_journal_id,      temporary_product_rotation.\"period_id\" AS temporary_product_rotation_period_id,      temporary_product_rotation.\"invoice_id\" AS temporary_product_rotation_invoice_id FROM      \"public\".\"res_company\" res_company RIGHT OUTER JOIN \"public\".\"temporary_product_rotation\" temporary_product_rotation ON res_company.\"id\" = temporary_product_rotation.\"company_id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner ON res_company.\"partner_id\" = res_partner.\"id\"      LEFT OUTER JOIN \"public\".\"res_province\" res_province ON res_partner.\"province\" = res_province.\"id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner_A ON temporary_product_rotation.\"partner_id\" = res_partner_A.\"id\"      LEFT OUTER JOIN \"public\".\"account_journal\" account_journal ON temporary_product_rotation.\"journal_id\" = account_journal.\"id\"      LEFT OUTER JOIN \"public\".\"account_period\" account_period ON temporary_product_rotation.\"period_id\" = account_period.\"id\"      LEFT OUTER JOIN \"public\".\"account_tax_code\" account_tax_code ON temporary_product_rotation.\"tax_code_id\" = account_tax_code.\"id\" ORDER BY      account_journal.\"name\" ASC,      temporary_product_rotation.\"period_id\" ASC,      temporary_product_rotation.\"invoice_id\" ASC, temporary_product_rotation.\"date\" ASC"
-msgstr "SELECT      temporary_product_rotation.\"amount_untaxed\" AS temporary_product_rotation_amount_untaxed,      temporary_product_rotation.\"name\" AS temporary_product_rotation_name,      temporary_product_rotation.\"invoice_type\" AS temporary_product_rotation_invoice_type,      temporary_product_rotation.\"invoice_date\" AS temporary_product_rotation_invoice_date,      temporary_product_rotation.\"invoice_total\" AS temporary_product_rotation_invoice_total,      temporary_product_rotation.\"amount_tax\" AS temporary_product_rotation_amount_tax,      temporary_product_rotation.\"date\" AS temporary_product_rotation_date,      temporary_product_rotation.\"invoice_number\" AS temporary_product_rotation_invoice_number,      temporary_product_rotation.\"tax_id\" AS temporary_product_rotation_tax_id,      temporary_product_rotation.\"create_date\" AS temporary_product_rotation_create_date,      res_company.\"name\" AS res_company_name,      res_partner.\"street\" AS res_partner_street,      res_partner.\"city\" AS res_partner_city,      res_partner.\"zip\" AS res_partner_zip,      res_partner.\"email\" AS res_partner_email,      res_partner.\"vat\" AS res_partner_vat,      res_partner.\"website\" AS res_partner_website,      res_partner.\"fax\" AS res_partner_fax,      res_partner.\"street2\" AS res_partner_street2,      res_partner.\"phone\" AS res_partner_phone,      res_partner.\"fiscalcode\" AS res_partner_fiscalcode,      res_province.\"code\" AS res_province_code,      res_province.\"name\" AS res_province_name,      res_partner_A.\"vat\" AS res_partner_A_vat,      res_partner_A.\"fiscalcode\" AS res_partner_A_fiscalcode,      res_partner_A.\"name\" AS res_partner_A_name,      account_journal.\"name\" AS account_journal_name,      account_period.\"name\" AS account_period_name,      account_period.\"date_stop\" AS account_period_date_stop,      account_period.\"date_start\" AS account_period_date_start,      account_tax_code.\"info\" AS account_tax_code_info,      account_tax_code.\"code\" AS account_tax_code_code,      account_tax_code.\"name\" AS account_tax_code_name,      temporary_product_rotation.\"journal_id\" AS temporary_product_rotation_journal_id,      temporary_product_rotation.\"period_id\" AS temporary_product_rotation_period_id,      temporary_product_rotation.\"invoice_id\" AS temporary_product_rotation_invoice_id FROM      \"public\".\"res_company\" res_company RIGHT OUTER JOIN \"public\".\"temporary_product_rotation\" temporary_product_rotation ON res_company.\"id\" = temporary_product_rotation.\"company_id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner ON res_company.\"partner_id\" = res_partner.\"id\"      LEFT OUTER JOIN \"public\".\"res_province\" res_province ON res_partner.\"province\" = res_province.\"id\"      LEFT OUTER JOIN \"public\".\"res_partner\" res_partner_A ON temporary_product_rotation.\"partner_id\" = res_partner_A.\"id\"      LEFT OUTER JOIN \"public\".\"account_journal\" account_journal ON temporary_product_rotation.\"journal_id\" = account_journal.\"id\"      LEFT OUTER JOIN \"public\".\"account_period\" account_period ON temporary_product_rotation.\"period_id\" = account_period.\"id\"      LEFT OUTER JOIN \"public\".\"account_tax_code\" account_tax_code ON temporary_product_rotation.\"tax_code_id\" = account_tax_code.\"id\" ORDER BY      account_journal.\"name\" ASC,      temporary_product_rotation.\"period_id\" ASC,      temporary_product_rotation.\"invoice_id\" ASC, temporary_product_rotation.\"date\" ASC"
-
-#. module: stock_rotation_jasper
-#: help:wizard.print.stockrotation,journal_ids:0
-msgid "Select journals you want retrieve documents from"
-msgstr "Seleziona i giornali che vuoi stampare"
-
-#. module: stock_rotation_jasper
-#: help:wizard.print.stockrotation,period_ids:0
-msgid "Select periods you want retrieve documents from"
-msgstr "Seleziona i periodi interessati"
-
-#. module: stock_rotation_jasper
-#: selection:wizard.print.stockrotation,type:0
-msgid "Supplier Invoices"
-msgstr "Supplier Invoices"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,tax_code_id:0
-#: field:temporary.stockrotation.total,tax_code_id:0
-msgid "Tax Account"
-msgstr "Tax Account"
-
-#. module: stock_rotation_jasper
-#: field:temporary.product_rotation,tax_id:0
-#: field:temporary.stockrotation.total,tax_id:0
-msgid "Tax ID"
-msgstr "Tax ID"
+msgid "Product-product_id/Name-name"
+msgstr "Product-product_id/Name-name"
 
 #. module: stock_rotation_jasper
 #: view:wizard.print.stockrotation:0
-msgid "Tax Journal"
-msgstr "Tax Journal"
+#: field:wizard.print.stockrotation,product_ids:0
+msgid "Products"
+msgstr "Prodotti"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "Tipo IVA Assoggettamento"
-msgstr "Tipo IVA Assoggettamento"
+#: field:temporary.product_rotation,quantity:0
+msgid "Quantity"
+msgstr "Quantità"
 
 #. module: stock_rotation_jasper
 #: report:stock_rotation_jr:0
-msgid "Totale Fattura"
-msgstr "Totale Fattura"
+msgid "Quantity-quantity"
+msgstr "Quantity-quantity"
 
 #. module: stock_rotation_jasper
-#: report:stock_rotation_jr:0
-msgid "Totali Registro"
-msgstr "Totali Registro"
+#: help:wizard.print.stockrotation,category_ids:0
+msgid "Select categories you want retrieve products from"
+msgstr "Seleziona le categorie da cui prelevare i prodotti"
 
 #. module: stock_rotation_jasper
-#: model:ir.actions.act_window,name:stock_rotation_jasper.action_stock_rotation
-msgid "Stock products rotation"
-msgstr "Registro IVA"
+#: help:wizard.print.stockrotation,product_ids:0
+msgid "Select products you want to print or none for all"
+msgstr "Seleziona i prodotti da stampare oppure lasciare vuoto per tutti"
+
+#. module: stock_rotation_jasper
+#: field:wizard.print.stockrotation,start_date:0
+msgid "Start date"
+msgstr "Data inizio"
 
 #. module: stock_rotation_jasper
 #: model:ir.actions.report.xml,name:stock_rotation_jasper.report_jr_stock_rotation
+msgid "Stock Rotation"
+msgstr "Rotazione Magazzino"
+
+#. module: stock_rotation_jasper
+#: model:ir.actions.act_window,name:stock_rotation_jasper.action_stock_rotation
+#: model:ir.ui.menu,name:stock_rotation_jasper.menu_stock_rotation
 msgid "Stock products rotation"
-msgstr "Stock products rotation"
+msgstr "Rotazione prodotti di magazzino"
+
+#. module: stock_rotation_jasper
+#: view:wizard.print.stockrotation:0
+msgid "Stock rotation products"
+msgstr "Rotazione prodotti di magazzino"
+
+#. module: stock_rotation_jasper
+#: field:temporary.product_rotation,user_id:0
+msgid "User"
+msgstr "Utente"
 
 #. module: stock_rotation_jasper
 #: view:wizard.print.stockrotation:0
@@ -408,12 +183,16 @@ msgid "or"
 msgstr "o"
 
 #. module: stock_rotation_jasper
+#: code:_description:0
 #: model:ir.model,name:stock_rotation_jasper.model_temporary_product_rotation
+#, python-format
 msgid "temporary.product_rotation"
 msgstr "temporary.product_rotation"
 
 #. module: stock_rotation_jasper
+#: code:_description:0
 #: model:ir.model,name:stock_rotation_jasper.model_wizard_print_stockrotation
+#, python-format
 msgid "wizard.print.stockrotation"
 msgstr "wizard.print.stockrotation"
 

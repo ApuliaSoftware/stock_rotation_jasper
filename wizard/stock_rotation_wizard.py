@@ -97,7 +97,7 @@ class wizard_print_stockrotation(orm.TransientModel):
         'product_ids': fields.many2many(
             'product.product',
             'product_rel', 'product_id', 'rotation_id',
-            'Journals',
+            'Products',
             help='Select products you want to print or none for all'),
         'start_date': fields.date('Start date', required=True),
         'end_date': fields.date('End date', required=True),

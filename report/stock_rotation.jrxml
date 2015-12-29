@@ -36,7 +36,7 @@
 			<textField>
 				<reportElement x="682" y="0" width="80" height="20"/>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
 				<reportElement x="762" y="0" width="40" height="20"/>
@@ -45,7 +45,7 @@
 			<textField>
 				<reportElement x="0" y="1" width="801" height="20"/>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA["ROTAZIONE MAGAZZINO DAL " + $P{start_date}.toString() + " AL " + $P{end_date}.toString()]]></textFieldExpression>
+				<textFieldExpression><![CDATA["STOCK ROTATION FROM " + $P{start_date}.toString() + " TO " + $P{end_date}.toString()]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -56,15 +56,15 @@
 		<band height="25" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="267" height="20"/>
-				<text><![CDATA[Product-product_id/Name-name]]></text>
+				<text><![CDATA[Product]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="267" y="0" width="267" height="20"/>
-				<text><![CDATA[Data-date]]></text>
+				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="534" y="0" width="267" height="20"/>
-				<text><![CDATA[Quantity-quantity]]></text>
+				<text><![CDATA[Quantity]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
