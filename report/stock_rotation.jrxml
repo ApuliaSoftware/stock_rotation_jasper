@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stock_rotation" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="OPENERP_RELATIONS" value="[&apos;temporary_stockrotation&apos;]"/>
+	<style name="Crosstab Data Text" hAlign="Center" lineSpacing="Single"/>
 	<parameter name="start_date" class="java.lang.String"/>
 	<parameter name="end_date" class="java.lang.String"/>
 	<queryString language="xPath">
@@ -12,10 +13,10 @@
 	<field name="Name-name" class="java.lang.String">
 		<fieldDescription><![CDATA[Product-product_id/Name-name]]></fieldDescription>
 	</field>
-	<field name="Data-date" class="java.lang.String">
+	<field name="Data-date" class="java.util.Date">
 		<fieldDescription><![CDATA[Data-date]]></fieldDescription>
 	</field>
-	<field name="Quantity-quantity" class="java.lang.String">
+	<field name="Quantity-quantity" class="java.lang.Float">
 		<fieldDescription><![CDATA[Quantity-quantity]]></fieldDescription>
 	</field>
 	<field name="Nome_Azienda-name" class="java.lang.String">
@@ -28,24 +29,25 @@
 		<band height="21" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="285" height="20"/>
-				<textElement>
+				<textElement lineSpacing="Single">
 					<font isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Nome_Azienda-name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nome_Azienda-name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="682" y="0" width="80" height="20"/>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textElement textAlignment="Right" lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
 				<reportElement x="762" y="0" width="40" height="20"/>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="1" width="801" height="20"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA["STOCK ROTATION FROM " + $P{start_date}.toString() + " TO " + $P{end_date}.toString()]]></textFieldExpression>
+				<textElement textAlignment="Center" lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["STOCK ROTATION FROM " + $P{start_date}.toString() + " TO " + $P{end_date}.toString()]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -56,33 +58,23 @@
 		<band height="25" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="267" height="20"/>
+				<textElement lineSpacing="Single"/>
 				<text><![CDATA[Product]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="267" y="0" width="267" height="20"/>
+				<textElement lineSpacing="Single"/>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="534" y="0" width="267" height="20"/>
+				<textElement lineSpacing="Single"/>
 				<text><![CDATA[Quantity]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="21" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="0" width="267" height="20"/>
-				<textFieldExpression><![CDATA[$F{Name-name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="267" y="0" width="267" height="20"/>
-				<textFieldExpression><![CDATA[$F{Data-date}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="534" y="0" width="267" height="20"/>
-				<textFieldExpression><![CDATA[$F{Quantity-quantity}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band splitType="Stretch"/>
 	</detail>
 	<columnFooter>
 		<band splitType="Stretch"/>
@@ -91,6 +83,119 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="42" splitType="Stretch">
+			<crosstab>
+				<reportElement x="0" y="0" width="802" height="42"/>
+				<rowGroup name="Name-name" width="70" totalPosition="End">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{Name-name}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="70" height="25"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{Name-name}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<text><![CDATA[Total Name-name]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="Data-date" height="30" totalPosition="End">
+					<bucket>
+						<bucketExpression class="java.util.Date"><![CDATA[$F{Data-date}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#F0F8FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.util.Date"><![CDATA[$V{Data-date}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<text><![CDATA[Total Data-date]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="Quantity-quantityMisura" class="java.lang.Float" calculation="Sum">
+					<measureExpression><![CDATA[$F{Quantity-quantity}]]></measureExpression>
+				</measure>
+				<crosstabCell width="50" height="25">
+					<cellContents>
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement lineSpacing="Single"/>
+							<textFieldExpression class="java.lang.Float"><![CDATA[$V{Quantity-quantityMisura}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="25" rowTotalGroup="Name-name">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement lineSpacing="Single"/>
+							<textFieldExpression class="java.lang.Float"><![CDATA[$V{Quantity-quantityMisura}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" columnTotalGroup="Data-date">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement lineSpacing="Single"/>
+							<textFieldExpression class="java.lang.Float"><![CDATA[$V{Quantity-quantityMisura}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell rowTotalGroup="Name-name" columnTotalGroup="Data-date">
+					<cellContents backcolor="#BFE1FF" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement lineSpacing="Single"/>
+							<textFieldExpression class="java.lang.Float"><![CDATA[$V{Quantity-quantityMisura}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
 	</summary>
 </jasperReport>
