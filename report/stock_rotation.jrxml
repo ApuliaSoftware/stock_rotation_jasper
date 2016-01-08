@@ -13,14 +13,14 @@
 	<field name="Name-name" class="java.lang.String">
 		<fieldDescription><![CDATA[Product-product_id/Name-name]]></fieldDescription>
 	</field>
-	<field name="Data-date" class="java.util.Date">
-		<fieldDescription><![CDATA[Data-date]]></fieldDescription>
-	</field>
 	<field name="Quantity-quantity" class="java.lang.Float">
 		<fieldDescription><![CDATA[Quantity-quantity]]></fieldDescription>
 	</field>
 	<field name="Nome_Azienda-name" class="java.lang.String">
 		<fieldDescription><![CDATA[Company-company_id/Nome_Azienda-name]]></fieldDescription>
+	</field>
+	<field name="Month-month" class="java.lang.Short">
+		<fieldDescription><![CDATA[Month-month]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -115,9 +115,9 @@
 						</cellContents>
 					</crosstabTotalRowHeader>
 				</rowGroup>
-				<columnGroup name="Data-date" height="30" totalPosition="End">
+				<columnGroup name="Month-month" height="30" totalPosition="End">
 					<bucket>
-						<bucketExpression class="java.util.Date"><![CDATA[$F{Data-date}]]></bucketExpression>
+						<bucketExpression class="java.lang.Short"><![CDATA[$F{Month-month}]]></bucketExpression>
 					</bucket>
 					<crosstabColumnHeader>
 						<cellContents backcolor="#F0F8FF" mode="Opaque">
@@ -127,7 +127,7 @@
 							<textField>
 								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="30"/>
 								<textElement lineSpacing="Single"/>
-								<textFieldExpression class="java.util.Date"><![CDATA[$V{Data-date}]]></textFieldExpression>
+								<textFieldExpression class="java.lang.Short"><![CDATA[$V{Month-month}]]></textFieldExpression>
 							</textField>
 						</cellContents>
 					</crosstabColumnHeader>
@@ -139,7 +139,7 @@
 							<staticText>
 								<reportElement x="0" y="0" width="50" height="30"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
-								<text><![CDATA[Total Data-date]]></text>
+								<text><![CDATA[Total Month-month]]></text>
 							</staticText>
 						</cellContents>
 					</crosstabTotalColumnHeader>
@@ -171,7 +171,7 @@
 						</textField>
 					</cellContents>
 				</crosstabCell>
-				<crosstabCell width="50" columnTotalGroup="Data-date">
+				<crosstabCell width="50" columnTotalGroup="Month-month">
 					<cellContents backcolor="#BFE1FF" mode="Opaque">
 						<box>
 							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -183,7 +183,7 @@
 						</textField>
 					</cellContents>
 				</crosstabCell>
-				<crosstabCell rowTotalGroup="Name-name" columnTotalGroup="Data-date">
+				<crosstabCell rowTotalGroup="Name-name" columnTotalGroup="Month-month">
 					<cellContents backcolor="#BFE1FF" mode="Opaque">
 						<box>
 							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>

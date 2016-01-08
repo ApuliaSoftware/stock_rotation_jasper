@@ -33,7 +33,8 @@ class temporary_product_rotation(orm.Model):
     _columns = {
         'company_id': fields.many2one('res.company', 'Company'),
         'product_id': fields.many2one('product.product', 'Product'),
-        'date': fields.date('Date'),
+        #'date': fields.date('Date'),
+        'month': fields.integer('Month'),
         'quantity': fields.float('Quantity'),
         'user_id': fields.many2one('res.users', 'User'),
     }
@@ -70,7 +71,8 @@ class temporary_product_rotation(orm.Model):
             vals = {
                 'company_id': line.order_id.company_id.id,
                 'product_id': line.product_id.id,
-                'date': line.order_id.date_order,
+                #'date': line.order_id.date_order,
+                'month': line.order_id.date_order[5:][:2],
                 'quantity': line.product_uom_qty,
                 'user_id': uid,
             }
