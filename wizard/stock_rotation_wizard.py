@@ -102,12 +102,11 @@ class wizard_print_stockrotation(orm.TransientModel):
             'Products',
             help='Select products you want to print or none for all'),
         'year': fields.many2one(
-                'account.fiscal_year', 'Fiscal Year', required=True),
+                'account.fiscalyear', 'Fiscal Year', required=True),
         }
 
     _defaults = {
-        'start_date': fields.date.context_today,
-        'end_date': fields.date.context_today,
+        #'start_date': fields.date.context_today,
         }
 
     def start_printing(self, cr, uid, ids, context={}):
