@@ -101,8 +101,10 @@ class wizard_print_stockrotation(orm.TransientModel):
             'product_rel', 'product_id', 'rotation_id',
             'Products',
             help='Select products you want to print or none for all'),
-        'start_date': fields.date('Start date', required=True),
-        'end_date': fields.date('End date', required=True),
+        'year': fields.many2one(
+                'account.fiscal_year', 'Fiscal Year', required=True),
+        #'start_date': fields.date('Start date', required=True),
+        #'end_date': fields.date('End date', required=True),
         }
 
     _defaults = {
@@ -119,8 +121,8 @@ class wizard_print_stockrotation(orm.TransientModel):
             data['ids'] = data_ids
             data['model'] = 'temporary.product_rotation'
             data['parameters'] = {
-                'start_date': parameters.start_date,
-                'end_date': parameters.end_date,
+                'start_date': parameters.year.date_start,
+                'end_date': parameters.year.date_stop,
             }
             return {
                 'type': 'ir.actions.report.xml',
