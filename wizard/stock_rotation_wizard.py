@@ -50,8 +50,8 @@ class temporary_product_rotation(orm.Model):
         sale_line_obj = self.pool['sale.order.line']
         product_ids = []
         sale_ids = sale_obj.search(cr, uid, [
-            ('date_order', '>=', parameters.start_date),
-            ('date_order', '<=', parameters.end_date),
+            ('date_order', '>=', parameters.year.date_start),
+            ('date_order', '<=', parameters.year.date_stop),
         ])
         if parameters.product_ids:
             product_ids = [p.id for p in parameters.product_ids]
@@ -103,8 +103,6 @@ class wizard_print_stockrotation(orm.TransientModel):
             help='Select products you want to print or none for all'),
         'year': fields.many2one(
                 'account.fiscal_year', 'Fiscal Year', required=True),
-        #'start_date': fields.date('Start date', required=True),
-        #'end_date': fields.date('End date', required=True),
         }
 
     _defaults = {
